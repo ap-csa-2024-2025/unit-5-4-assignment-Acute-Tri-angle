@@ -3,9 +3,23 @@ public class Main
   public static void main(String[] args)
   {
     // test your functions here to make sure they work
-    System.out.println(distanceFormula(5,21,2,1));
-    System.out.println(posQuadraticFormula(2, 4, 1));
-    System.out.println(negQuadraticFormula(2, 4, 1));
+    double distance = distanceFormula(5,21,2,1);
+    double x1 = posQuadraticFormula(2, 4, 1);
+    double x2 = negQuadraticFormula(2, 4, 1);
+
+    System.out.println("the distance is: " + distance);
+    if (x1 == -1111111111){
+      System.out.println("error bro, imaginary roots or invalid values");
+    }
+    else{
+      System.out.println("root #1: " + x1);
+    }
+    if (x2 == -1111111111){
+      System.out.println("error bro, imaginary roots or invalid values");
+    }
+    else{
+      System.out.println("root #2: " + x2);
+    }
   }
 
   // Implement distance formula method here
@@ -16,13 +30,23 @@ public class Main
 
   // implement one of your quadratic formula methods here
   public static double posQuadraticFormula(int a, int b, int c){
-      double x = ( (-1 * b) + Math.sqrt(b * b - 4*a*c)) / 2 * a;
+    if ((a != 0) && ((b*b-4*a*c) >= 0)){
+    double x = ( (-1 * b) + Math.sqrt(b * b - 4*a*c)) / (2 * a);
       return x;
+    }
+    else{
+      return -1111111111;
+    }
     }
 
   // implement the other quadratic formula here
   public static double negQuadraticFormula(int a, int b, int c){
-    double x =  (-1* (b) - Math.sqrt(b * b - 4*a*c)) / 2 * a;
-    return x;
-  }
+    if ((a != 0) && ((b*b-4*a*c) >= 0)){
+      double x = ( (-1 * b) - Math.sqrt(b * b - 4*a*c)) / (2 * a);
+        return x;
+      }
+      else{
+        return -1111111111;
+      }
+}
 }
