@@ -4,6 +4,8 @@ public class Main
   {
     // test your functions here to make sure they work
     System.out.println(distanceFormula(5,21,2,1));
+    System.out.println(posQuadraticFormula(2, 4, 1));
+    System.out.println(negQuadraticFormula(2, 4, 1));
   }
 
   // Implement distance formula method here
@@ -14,17 +16,13 @@ public class Main
 
   // implement one of your quadratic formula methods here
   public static double posQuadraticFormula(int a, int b, int c){
-    if (a != 0 ){
-      double x = ( (-1* (b) + Math.sqrt(b * b - 4*a*c)) / 2 * a);
+      double x = ( (-1 * b) + Math.sqrt(b * b - 4*a*c)) / 2 * a;
       return x;
     }
-    else if (a == 0){
-      return 0.0;
-    }
-    else {
-      return -1.0;
-    }
 
-  }
   // implement the other quadratic formula here
+  public static double negQuadraticFormula(int a, int b, int c){
+    double x =  (-1* (b) - Math.sqrt(b * b - 4*a*c)) / 2 * a;
+    return x;
+  }
 }
